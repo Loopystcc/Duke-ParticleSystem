@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canvas basics</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="slider-container">
+    
+            <label for="sizeRange">Particle Size:</label>
+            <input type="range" id="sizeRange" class="slider" min="1" max="10" value="5" step="0.1">
+
+            <label for="speedRange">Particle Speed:</label>
+            <input type="range" id="speedRange" class="slider" min="0" max="5" value="1.5" step="0.1">
+
+            <label for="amountRange">Particle Amount:</label>
+            <input type="range" id="amountRange" class="slider" min="0" max="2000" value="30" step="5">
+            <input type="color" id="color" class="slider" value="#ffffff">
+
+            <button onclick="init()" id="init">Init</button>
+
+        </div>
+        
+        <canvas id="canvas1"></canvas>
+
+        <script src="script.js"></script>
+    </body>
+</html>
