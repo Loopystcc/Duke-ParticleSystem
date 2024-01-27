@@ -84,7 +84,21 @@ function handleParticles(){
     for(let i = 0; i< particalArray.length;i++){
         particalArray[i].update();
         particalArray[i].draw();
+        for(let j=i;j<particalArray.length;j++){
+            const dx = particalArray[i].x - particalArray[j].x;
+            const dy = particalArray[i].y - particalArray[j].y;
+            const distance = Math.sqrt(dx*dx + dy*dy)
+            if(distance<70){
+                ctx.beginPath();
+                ctx.strokeStyle = particalArray[i].color;
+                ctx.lineWeight = 0.2;
+                ctx.moveTo(particalArray[i].x,particalArray[i].y);
+                ctx.lineTo(particalArray[j].x,particalArray[j].y);
+                ctx.stroke();
+            }
+        }
     }
+    
 }
 
 
